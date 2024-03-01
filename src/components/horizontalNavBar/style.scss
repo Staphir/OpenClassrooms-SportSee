@@ -1,0 +1,33 @@
+.horizontal-nav-bar {
+    background-color: black;
+    box-shadow: 0 5px 3px black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10%;
+
+    img {
+        padding-left: 28px;
+        width: 178px;
+        height: 100%;
+    }
+
+    nav {
+        width: 100%;
+        padding-right: 50px;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style-type: none;
+        justify-content: space-between;
+    }
+
+    li {
+        color: white;
+        font-size: 24px;
+    }
+
+}

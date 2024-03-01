@@ -1,0 +1,23 @@
+@use "sass:map";
+@use "sass:color";
+@use "../../style/global_variables" as gv;
+
+.main-header {
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-weight: normal;
+        font-size: 18px;
+    }
+
+    i {
+        font-style: normal;
+        color: map.get(gv.$colors, "main");
+    }
+
+    .hand-clapping-icon {
+        color: #FFD04A;
+    }
+}
