@@ -4,10 +4,10 @@ function userAverageSessions(userId) {
     if(process.env.REACT_APP_DATA_TARGET === "mock") {
         console.log(userId);
     } else {
-        axios.get("http://localhost:3000/user/"+userId+"/average-sessions")
+        return axios.get("http://localhost:3000/user/"+userId+"/average-sessions")
         .then(function (response) {
             // handle success
-            return response;
+            return response.data;
         })
         .catch(function (error) {
             // handle error

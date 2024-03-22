@@ -4,7 +4,7 @@ function userPerformance(userId) {
     if(process.env.REACT_APP_DATA_TARGET === "mock") {
         console.log(userId);
     } else {
-        axios.get("http://localhost:3000/user/"+userId+"/performance")
+        return axios.get("http://localhost:3000/user/"+userId+"/performance")
         .then(function (response) {
             // handle success
             return response.data;

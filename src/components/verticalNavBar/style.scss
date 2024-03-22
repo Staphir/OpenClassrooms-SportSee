@@ -1,0 +1,38 @@
+.vertical-nav-bar {
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    background-color: black;
+    height: 100%;
+    width: 117px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        row-gap: 20px;
+    }
+
+    li {
+        img {
+            width: 64px;
+            height: 64px;
+        }
+    }
+
+    .copiryght-text {
+        position: absolute;
+        bottom: 100px;
+        color: white;
+        transform: rotate(-90deg);
+        white-space: nowrap;
+        font-size: 12px;
+    }
+}

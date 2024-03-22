@@ -1,0 +1,8 @@
+@use '../../style/global_variables' as gv;
+@use 'sass:map';
+@use 'sass:color';
+
+.radar-chart {
+    background-color: map.get(gv.$colors, "dark-grey");
+    border-radius: 5px;
+}

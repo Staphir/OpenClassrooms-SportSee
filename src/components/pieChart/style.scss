@@ -2,7 +2,7 @@
 @use 'sass:map';
 @use 'sass:color';
 
-.radial-bar-chart {
+.pie-chart-container {
     background-color: map.get(gv.$colors, "light-grey");
     border-radius: 5px;
 

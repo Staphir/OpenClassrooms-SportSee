@@ -7,7 +7,6 @@ function userInformations(userId) {
         return axios.get("http://localhost:3000/user/"+userId)
         .then(function (response) {
             // handle success
-            // console.log(response.data.data.userInfos.firstName);
             return response.data;
         })
         .catch(function (error) {
