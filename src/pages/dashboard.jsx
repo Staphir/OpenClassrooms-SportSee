@@ -16,11 +16,11 @@ import userActivity from '../databaseTools/userActivity';
 import userPerformance from '../databaseTools/userPerformance';
 
 function Dashboard() {
-  const [firstName, setFirstName] = useState(null);
-  const [activitiesSessions, setActivitiesSessions] = useState(null);
-  const [averageSessions, setAverageSessions] = useState(null);
-  const [activitiesPerformances, setActivitiesPerformances] = useState(null);
-  const [todayScore, setTodayScore] = useState(null);
+  const [firstName, setFirstName] = useState("");
+  const [activitiesSessions, setActivitiesSessions] = useState([]);
+  const [averageSessions, setAverageSessions] = useState([]);
+  const [activitiesPerformances, setActivitiesPerformances] = useState([]);
+  const [score, setScore] = useState([]);
   const [keyData, setKeyData] = useState({});
 
   useEffect(() => {
@@ -55,8 +55,8 @@ function Dashboard() {
     });
 
     userInformations(process.env.REACT_APP_USER_ID).then((response) => {
-      const score = response.data.todayScore*100;
-      setTodayScore([{todayScore: score, fill: '#FF0000'}, {todayScore: 100 - score, fill: 'white'}]);
+      const sc = response.data.score*100;
+      setScore([{todayScore: sc, fill: '#FF0000'}, {todayScore: 100 - sc, fill: 'white'}]);
     });
 
     userInformations(process.env.REACT_APP_USER_ID).then((response) => {
@@ -84,6 +84,8 @@ function Dashboard() {
       });
     });
   }, []);
+
+
   return(
     <Fragment>
       <HorizontalNavBar></HorizontalNavBar>
@@ -99,8 +101,7 @@ function Dashboard() {
           </section>
           <AreaChartContainer name="Durée moyenne des sessions" data={averageSessions}></AreaChartContainer>
           <RadarChartContainer data={activitiesPerformances}></RadarChartContainer>
-          {/* <RadialBarChartContainer name="Score" data={todayScore}></RadialBarChartContainer> */}
-          <PieChartContainer name="Score" data={todayScore}></PieChartContainer>
+          <PieChartContainer name="Score" data={score}></PieChartContainer>
         </div>
       </main>
     </Fragment>

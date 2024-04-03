@@ -10,13 +10,13 @@ header {
 .grid-dashboard {
     display: grid;
     gap: 30px;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(4, auto);
 
     .bar-chart {
         grid-row: 1 / 2;
         grid-column: 1 / 4;
-        min-height: 320px;
+        // min-height: 320px;
     }
     
     .key-data {

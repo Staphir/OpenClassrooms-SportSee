@@ -15,20 +15,18 @@ function AreaChartContainer({name, data}) {
       };
 
     return (
-        <ResponsiveContainer className="area-chart" width="100%" height="100%">
+        <ResponsiveContainer className="area-chart" aspect={1}>
           <p className='chart-title'>Durée moyenne des sessions</p>
             <AreaChart
-                width="100%"
-                height="100%"
                 data={data}
                 margin={{
                     top: 100,
-                    right: 0,
-                    left: 0,
+                    right: 10,
+                    left: 10,
                     bottom: 0,
                 }}
             >
-                <XAxis dataKey="day" axisLine={false} stroke='#AAAAAA' tickLine={false} offset={5}></XAxis>
+                <XAxis dataKey="day" axisLine={false} stroke='#AAAAAA' tickLine={false}></XAxis>
                 <YAxis hide={true}></YAxis>
                 <Label value={name} offset={0} position="insideTop" />
                 <Tooltip content={CustomTooltip} />

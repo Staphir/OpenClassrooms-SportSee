@@ -6,7 +6,7 @@
     background-color: map.get(gv.$colors, 'light-grey');
     border-radius: 5px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     padding: 32px;
     column-gap: 20px;

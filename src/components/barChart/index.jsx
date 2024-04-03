@@ -26,8 +26,6 @@ function CustomTooltip({ active, payload, label }) {
 function BarChartContainer({name, data}) {
     let dataDomain = [Infinity, -Infinity];
 
-
-    data.forEach(dataValues => { console.log(dataValues)})
     data.forEach(dataValues => {
         dataDomain[0] = Math.min(dataDomain[0], dataValues.kilogram);
         dataDomain[1] = Math.max(dataDomain[1], dataValues.kilogram);
@@ -35,8 +33,8 @@ function BarChartContainer({name, data}) {
     dataDomain = [dataDomain[0] - 1, dataDomain[1] + 1];
 
     return (
-      <ResponsiveContainer className="bar-chart" width="100%" height="100%">
-      <p className='chart-title'>Activité quotidienne</p>
+      <ResponsiveContainer className="bar-chart" aspect={2.6}>
+      <p className='chart-title'>{name}</p>
           <BarChart
               width="100%"
               height="100%"

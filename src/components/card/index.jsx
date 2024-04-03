@@ -1,12 +1,7 @@
 import './style.scss';
-// import burger from '../../assets/burger.png';
 
 function Card({name, data, imgName, backgroundColor}) {
     const pathAssets = './assets/';
-    // const [apple, setApple] = useState();
-    // useEffect(() => {
-    //     setApple(require(imgName));
-    // }, []);
 
     return (
         <section className="card">

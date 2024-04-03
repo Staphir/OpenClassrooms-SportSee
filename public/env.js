@@ -4,7 +4,7 @@ window.env = {
   "asl.log": "Destination=file",
   "BESIEGE_GAME_ASSEMBLIES": "D:/SteamLibrary/steamapps/common/Besiege/Besiege_Data\\Managed/",
   "BESIEGE_UNITY_ASSEMBLIES": "D:/SteamLibrary/steamapps/common/Besiege/Besiege_Data\\Managed/",
-  "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_24180_PJNMCXDXEQCUWAST",
+  "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_12404_SNGJCOHDXURYUAJV",
   "COLOR": "1",
   "COLORTERM": "truecolor",
   "CommonProgramFiles": "C:\\Program Files\\Common Files",
