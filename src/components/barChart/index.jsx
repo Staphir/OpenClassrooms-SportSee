@@ -43,7 +43,7 @@ function BarChartContainer({name, data}) {
                   top: 30,
                   right: 10,
                   left: 20,
-                  bottom: 25,
+                  bottom: 10,
               }}
               barSize={7}
               barGap={8}

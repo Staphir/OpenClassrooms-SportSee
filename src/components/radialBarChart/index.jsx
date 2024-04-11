@@ -2,7 +2,6 @@ import './style.scss';
 import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts';
 
 function customLabel({ payload, x, y, width, height, value }) {
-  console.log(width)
   return <text fill='#282D30' textAnchor='end'>{value + '%\nde votre\nobjectif'}</text>
 }
 

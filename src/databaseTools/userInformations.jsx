@@ -1,22 +1,38 @@
 import axios from 'axios';
+import data from '../datas/data.json';
 
-function userInformations(userId) {
-    if(process.env.REACT_APP_DATA_TARGET === "mock") {
-        console.log(userId);
+async function userInformations(userId) {
+        let allDataUser = {};
+        if(process.env.REACT_APP_DATA_TARGET === "mock") {
+            for(let i=0; i<data.users.length; i++) {
+                if(data.users[i].id.toString() === userId) {
+                    allDataUser = data.users[i];
+                    break;
+                }
+            }
+            const response = {"data":
+                {
+                "id": allDataUser.id,
+                "userInfos": allDataUser.userInfos,
+                "todayScore": allDataUser.todayScore,
+                "keyData": allDataUser.keyData
+                }
+            };
+    return new Promise(function(resolve, reject) {
+        resolve(response);
+        reject("error");
+    });
     } else {
-        return axios.get("http://localhost:3000/user/"+userId)
-        .then(function (response) {
-            // handle success
-            return response.data;
-        })
-        .catch(function (error) {
-            // handle error
-            console.log(error.request);
-            return;
-        })
-        .finally(function () {
-            // always executed
-        });
+        try {
+                try {
+                    const response_1 = await axios.get("http://localhost:3000/user/" + userId);
+                    return response_1.data;
+                } catch (error) {
+                    // handle error
+                    console.log(error.request);
+                    return;
+                }
+            } finally { }
     };
 }
 

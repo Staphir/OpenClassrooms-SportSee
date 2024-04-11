@@ -37,7 +37,7 @@ function Dashboard() {
     });
 
     userAverageSessions(process.env.REACT_APP_USER_ID).then((response) => {
-      const daysTxt = {1: 'L', 2: 'M', 3: 'M', 4: 'J', 5: 'V', 6: 'S', 7: 'D'};
+      const daysTxt = {'1': 'L', '2': 'M', '3': 'M', '4': 'J', '5': 'V', '6': 'S', '7': 'D'};
       const sessions = response.data.sessions;
       sessions.forEach(session => {
         session.day = daysTxt[session.day];
@@ -55,29 +55,29 @@ function Dashboard() {
     });
 
     userInformations(process.env.REACT_APP_USER_ID).then((response) => {
-      const sc = response.data.score*100;
+      const sc = response.data.todayScore*100;
       setScore([{todayScore: sc, fill: '#FF0000'}, {todayScore: 100 - sc, fill: 'white'}]);
     });
 
     userInformations(process.env.REACT_APP_USER_ID).then((response) => {
       setKeyData({
         'Calories': {
-          dataCount: response.data.keyData.calorieCount + 'kCal',
+          dataCount: response.data.keyData.calorieCount,
           srcImg: 'flame.png',
           backgroundColor: '#FF000050'
         },
         'Proteines': {
-          dataCount: response.data.keyData.proteinCount + 'g',
+          dataCount: response.data.keyData.proteinCount,
           srcImg: 'chicken.png',
           backgroundColor: '#4AB8FF50'
         },
         'Glucides': {
-          dataCount: response.data.keyData.carbohydrateCount + 'g',
+          dataCount: response.data.keyData.carbohydrateCount,
           srcImg: 'apple.png',
           backgroundColor: '#FDCC0C50'
         },
         'Lipides': {
-          dataCount: response.data.keyData.lipidCount + 'g',
+          dataCount: response.data.keyData.lipidCount,
           srcImg: 'burger.png',
           backgroundColor: '#FD518150'
         },

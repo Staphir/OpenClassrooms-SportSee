@@ -1,22 +1,31 @@
 import axios from 'axios';
+import data from '../datas/data.json';
 
-function userActivity(userId){
+async function userActivity(userId){
+    let allDataUser = {};
     if(process.env.REACT_APP_DATA_TARGET === "mock") {
-        console.log(userId);
-    } else {
-        return axios.get("http://localhost:3000/user/"+userId+"/activity")
-        .then(function (response) {
-            // handle success
-            return response.data;
-        })
-        .catch(function (error) {
-            // handle error
-            console.log(error.request);
-            return;
-        })
-        .finally(function () {
-            // always executed
+        allDataUser = data.users.find(t => t.id === userId);
+        const response = {"data":
+            {
+            "userId": allDataUser.id,
+            "sessions": allDataUser.activitiesSessions
+            }
+        };
+        return new Promise(function(resolve, reject) {
+            resolve(response);
+            reject("error");
         });
+    } else { 
+        try {
+            try {
+                const response_1 = await axios.get("http://localhost:3000/user/" + userId + "/activity");
+                return response_1.data;
+            } catch (error) {
+                // handle error
+                console.log(error.request);
+                return;
+            }
+        } finally { }
     };
 }
 

@@ -2,14 +2,14 @@
 @use 'sass:map';
 @use 'sass:color';
 
-.pie-chart-container {
-    background-color: map.get(gv.$colors, "light-grey");
+.pie-chart {
+    background-color: map.get(gv.$colors, 'light-grey');
     border-radius: 5px;
 
     .chart-title {
         position: absolute;
         font-size: 15px;
         font-weight: bold;
-        margin: 30px 0 0 20px;
+        margin: 20px 0 0 15px;
     }
 }

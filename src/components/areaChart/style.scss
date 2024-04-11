@@ -15,9 +15,23 @@
     }
 
     .custom-areaChart-tooltip {
-        background-color: white;
-        color: black;
-        font-size: 12px;
-        padding: 3px 10px 3px 10px;
+        position: absolute;
+        left: 0;
+
+        .tooltip-label-div {
+            position: absolute;
+            background-color: map.get(gv.$colors, 'light-grey');
+            color: black;
+            font-size: 12px;
+            padding: 3px 10px 3px 10px;
+            min-width: 39px;
+            min-height: 25px;
+        }
+
+        .darker-tooltiip-zone {
+            fill: black;
+            opacity: 0.2;
+        }
     }
+
 }

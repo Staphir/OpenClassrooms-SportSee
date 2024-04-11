@@ -18,7 +18,7 @@ function customLabel({ cx, cy, percent, index }) {
 
 function PieChartContainer({name, data}) {
     return (
-        <ResponsiveContainer className='pie-chart-container' aspect={1}>
+        <ResponsiveContainer className='pie-chart' aspect={1}>
             <p className="chart-title">{name}</p>
             <PieChart>
                 <Pie
