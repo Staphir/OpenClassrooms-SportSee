@@ -1,10 +1,9 @@
-import { Fragment, useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './style.scss';
-import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, Label, Rectangle, ReferenceArea } from 'recharts';
-import { useEffect } from 'react';
-import { useRef } from 'react';
+import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, Label } from 'recharts';
 
 function AreaChartContainer({name, data}) {
+  // Ratio width/height depending on screen size
   const [aspect, setAspect] = useState(1);
   window.addEventListener('resize', () => {
     window.innerWidth <= 1439 ? setAspect(2.6) : setAspect(1);
@@ -16,7 +15,8 @@ function AreaChartContainer({name, data}) {
   },[]);
 
 
-  const CustomTooltip = ({ active, payload, label }) => {
+  // custom tooltip to have right part of chart more darkest 
+  const CustomTooltip = ({ active, payload }) => {
     let dotX, dotY, containerWidth, containerHeight = 0;
     let dotXStyle, dotYStyle = ''
     if (active && payload && payload.length) {

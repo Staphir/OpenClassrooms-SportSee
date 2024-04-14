@@ -9,7 +9,6 @@ import BarChartContainer from '../components/barChart';
 import Card from '../components/card';
 import AreaChartContainer from '../components/areaChart';
 import RadarChartContainer from '../components/radarChart'
-// import RadialBarChartContainer from '../components/radialBarChart';
 import PieChartContainer from '../components/pieChart';
 import userAverageSessions from '../databaseTools/userAverageSessions';
 import userActivity from '../databaseTools/userActivity';

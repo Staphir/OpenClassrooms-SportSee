@@ -1,6 +1,13 @@
 import axios from 'axios';
 import data from '../datas/data.json';
 
+/**
+ * Get user performances informations (local or api depending on the environment variable)
+ *
+ * @async
+ * @param {String} userId
+ * @returns {Object} performances informations
+ */
 async function userPerformance(userId) {
     let allDataUser = {};
     if(process.env.REACT_APP_DATA_TARGET === "mock") {
