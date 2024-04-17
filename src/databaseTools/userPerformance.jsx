@@ -33,9 +33,7 @@ async function userPerformance(userId) {
             const response = await axios.get("http://localhost:3000/user/" + userId + "/performance");
             return response.data;
         } catch (error) {
-            // handle error
-            console.log(error.request);
-            return;
+            return error;
         }
     };
 }
